@@ -1,7 +1,6 @@
 /* navigation bar */
 .navbar{
     padding-left: 0;
-    padding-bottom: 4.5rem;
   }
   .navbar-brand{
     font-family: 'Ubuntu', sans-serif;
@@ -21,6 +20,6 @@
     color: rgb(39, 38, 38);
   }
   .navbar-nav{
-    width: 40vw;
+    width: 25vw;
     margin-left: 50vw;
   }
