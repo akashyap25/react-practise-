@@ -11,7 +11,7 @@ export default function TextForm(props){
     }
     const handleUpClickCamel =()=>{
        setText(text.replace(/(?:^\w|[A-Z]|\b\w)/g, function(word, index) {
-            return index === 1 ? word.toLowerCase() : word.toUpperCase();
+            return index === -1 ? word.toLowerCase() : word.toUpperCase();
           }).replace(/\s+/g, ' '));
         }
     const handleOnChange =(event)=>{
@@ -20,7 +20,7 @@ export default function TextForm(props){
    }
    
     // text = "new text "; wrong way to change;
-    // setText = "new text"; right way;
+    // setText  ("new text"); right way;
     return( 
       <>
       <div className="container">
@@ -39,7 +39,7 @@ export default function TextForm(props){
         <p>{text.split(" ").length} words & {text.length} characters.</p>
         <p>{0.008*text.split(" ").length} Minutes of read.</p>
         <h2>Preview</h2>
-        <p>{text}</p>
+        <p>{text.length>0?text:'Enter something in textarea above to preview it..'}</p>
    </div>
       </>
       )
