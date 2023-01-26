@@ -5,14 +5,21 @@ export default function TextForm(props){
     const [text, setText]= useState('Enter the test here...');
     const handleUpClick =()=>{
         setText(text.toUpperCase());
+        props.showAlert('Converted to Uppercase', 'Success');
     }
     const handleUpClickLower =()=>{
         setText(text.toLowerCase());
+        props.showAlert('Converted to Lowercase', 'Success');
     }
+    const handleUpClickClear =()=>{
+      setText("");
+      props.showAlert('Cleared text-area', 'Success');
+  }
     const handleUpClickCamel =()=>{
        setText(text.replace(/(?:^\w|[A-Z]|\b\w)/g, function(word, index) {
             return index === -1 ? word.toLowerCase() : word.toUpperCase();
           }).replace(/\s+/g, ' '));
+          props.showAlert('Converted to Camelcase', 'Success');
         }
     const handleOnChange =(event)=>{
         setText(event.target.value);
@@ -23,15 +30,15 @@ export default function TextForm(props){
     // setText  ("new text"); right way;
     return( 
       <>
-      <div className="container">
+      <div className='container' >
       <h1 className="my-3">
         {props.heading}
       </h1>
-     <textarea className="form-control " value={text} onChange={handleOnChange} id="my-box" rows="8"></textarea>
+     <textarea className="form-control" value={text} style={{backgroundColor:props.mode==='light'?'dark':'light'}} onChange={handleOnChange} id="my-box" rows="8"></textarea>
      <button className="btn btn-primary my-3" onClick={handleUpClick}> Convert to Upper Case</button>
      <button className="btn btn-primary mx-2" onClick={handleUpClickLower}> Convert to lower Case</button>
      <button className="btn btn-primary mx-2" onClick={handleUpClickCamel}> Convert to Camel Case</button>
-
+     <button className="btn btn-primary mx-2" onClick={handleUpClickClear}> Clear text</button>
 
     </div>
    <div className="container">
