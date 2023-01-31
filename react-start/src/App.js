@@ -1,6 +1,6 @@
 import './App.css';
 import React, {useState} from'react';
-// import About from './components/About';
+import About from './components/About';
 import NavBar from "./components/NavBar";
 import TextForm from "./components/TextForm";
 import Alert from "./components/Alert";
@@ -22,7 +22,8 @@ function App() {
   const toggleMode = () => {
     if(mode==='light'){
        setMode('dark');
-       document.body.style.backgroundColor='rgb(152, 158, 236)';
+       document.body.style.backgroundColor= 'rgba(26, 26, 26, 0.772)';
+       //rgb(152, 158, 236)
        showAlert('Dark Mode ', 'Sucessfully enabled')
     } else {
       setMode('light');
@@ -36,7 +37,7 @@ function App() {
     <Alert alert={alert}/>
     <div className="container">
     <TextForm heading='Enter the text to analyze' mode={mode} showAlert={showAlert}/>
-    {/* <About/> */}
+    <About/>
     </div>
     </>
   );
