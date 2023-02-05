@@ -1,4 +1,5 @@
 import React from 'react';
+import  {Link } from 'react-router-dom';
 import './NavBar.css'
 
 function navbar(props){
@@ -11,15 +12,15 @@ function navbar(props){
 </button>
 <div className="collapse navbar-collapse" id="navbarSupportedContent">
 <ul className="navbar-nav ml-auto">
-    <li className="nav-item">
+    {/* <li className="nav-item">
         <a className={`nav-link text-${props.mode==='light'?'dark':'light'}`}  href="#footer">Contact</a>
-    </li>
+    </li> */}
     <li className="nav-item">
-        <a className={`nav-link text-${props.mode==='light'?'dark':'light'}`}  href="#pricing">Pricing</a>
+        <a className={`nav-link text-${props.mode==='light'?'dark':'light'}`}  href="/">About</a>
     </li>
-    <li className="nav-item">
+    {/* <li className="nav-item">
         <a className={`nav-link text-${props.mode==='light'?'dark':'light'}`}  href="#cta">Download</a>
-    </li>
+    </li> */}
 </ul>
 
 </div>
